@@ -1,0 +1,184 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Application — Intern ढूंढो</title>
+  <meta name="description" content="Apply for internships." />
+  <link rel="icon" href="{% static 'images/Ashoka-Stambha.jpeg' %}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav__inner">
+      <div class="nav__brand" id="nav-home" style="cursor:pointer;">
+        <div class="brand__logo">
+          <img src="{% static 'images/Ashoka-Stambha.jpeg' %}" alt="Ashoka Stambh">
+        </div>
+        <span class="brand__text">Intern ढूंढो</span>
+      </div>
+      <a href="{% url 'dashboard' %}" class="btn btn--secondary">Back to Dashboard</a>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="container" style="max-width:1300px">
+      <div class="card fade-up" style="padding:28px">
+        <h2 class="section__title" style="text-align:left;">Internship Application</h2>
+        <p class="section__subtitle" style="text-align:left; margin-bottom:24px">
+          Complete your profile to let our AI find the best opportunities for you.
+        </p>
+
+        <!-- FORM points to Django application view -->
+        <form id="application-form" method="POST" action="{% url 'application' %}" novalidate>
+          {% csrf_token %}
+
+          <!-- Bio-Data -->
+          <fieldset class="form-section">
+            <legend class="form-legend">Bio-Data</legend>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" class="form-input">
+              </div>
+              <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" class="form-input">
+              </div>
+              <div class="form-group form-group--full">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" class="form-input" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <label>Gender</label>
+                <div class="radio-group" style="margin-top:auto;">
+                  <input type="radio" id="male" name="gender" value="male"><label for="male">Male</label>
+                  <input type="radio" id="female" name="gender" value="female"><label for="female">Female</label>
+                  <input type="radio" id="other" name="gender" value="other"><label for="other">Other</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Marital Status</label>
+                <div class="radio-group" style="margin-top:auto;">
+                  <input type="radio" id="single" name="maritalStatus" value="single"><label for="single">Single</label>
+                  <input type="radio" id="married" name="maritalStatus" value="married"><label for="married">Married</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="nationality">Nationality</label>
+                <input type="text" id="nationality" name="nationality" class="form-input">
+              </div>
+              <div class="form-group">
+                <label for="linkedin">LinkedIn Profile URL</label>
+                <input type="url" id="linkedin" name="linkedin" class="form-input">
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Optional -->
+          <fieldset class="form-section">
+            <legend class="form-legend">Optional Information</legend>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="fatherName">Father's Name</label>
+                <input type="text" id="fatherName" name="fatherName" class="form-input">
+              </div>
+              <div class="form-group">
+                <label for="motherName">Mother's Name</label>
+                <input type="text" id="motherName" name="motherName" class="form-input">
+              </div>
+              <div class="form-group">
+                <label for="religion">Religion</label>
+                <input type="text" id="religion" name="religion" class="form-input">
+              </div>
+              <div class="form-group">
+                <label for="languages">Languages Known</label>
+                <input type="text" id="languages" name="languages" class="form-input" placeholder="e.g., English, Hindi, Bengali">
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Professional -->
+          <fieldset class="form-section">
+            <legend class="form-legend">Professional Details</legend>
+            <div class="form-grid">
+              <div class="form-group form-group--full">
+                <label for="skills-input">Skills (comma separated)</label>
+                <input type="text" id="skills-input" name="skills" class="form-input" placeholder="e.g., Python, React, AWS">
+              </div>
+              <div class="form-group">
+                <label for="degree">Highest Degree</label>
+                <input type="text" id="degree" name="degree" class="form-input" placeholder="e.g., B.Tech in Computer Science">
+              </div>
+              <div class="form-group">
+                <label for="interestedRoles">Interested Roles</label>
+                <input type="text" id="interestedRoles" name="interestedRoles" class="form-input" placeholder="e.g., Frontend Developer, Data Analyst">
+              </div>
+              <div class="form-group form-group--full">
+                <label for="achievements">Achievements (Optional)</label>
+                <textarea id="achievements" name="achievements" class="form-input" rows="3"></textarea>
+              </div>
+              <div class="form-group form-group--full">
+                <label>Work Preference</label>
+                <div class="radio-group">
+                  <input type="radio" id="remote" name="preference" value="remote" checked>
+                  <label for="remote">Remote</label>
+                  <input type="radio" id="offline" name="preference" value="offline">
+                  <label for="offline">Offline</label>
+                </div>
+              </div>
+              <div class="form-group form-group--full" id="offline-options" style="display:none;">
+                <label>Preferred City</label>
+                <div class="radio-group">
+                  <input type="radio" id="city1" name="city" value="Bangalore"><label for="city1">Bangalore</label>
+                  <input type="radio" id="city2" name="city" value="Delhi NCR"><label for="city2">Delhi NCR</label>
+                  <input type="radio" id="city3" name="city" value="Mumbai"><label for="city3">Mumbai</label>
+                  <input type="radio" id="city4" name="city" value="Kolkata"><label for="city4">Kolkata</label>
+                </div>
+              </div>
+              <div class="form-group form-group--full">
+                <label for="experience">Prior Experience</label>
+                <textarea id="experience" name="experience" class="form-input" rows="4" placeholder="Describe your previous internships or projects..."></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+          <div style="display:flex; justify-content:center">
+            <button type="submit" class="btn btn--primary btn--lg" style="margin-top:18px; width:15%;">
+              Submit Application
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bar">
+        <p>© <span id="copyright-year">2025</span> Intern ढूंढो. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/script.js' %}"></script>
+  <script>
+    document.getElementById("copyright-year").textContent = new Date().getFullYear();
+    document.getElementById("nav-home").addEventListener("click", () => {
+      window.location.href = "{% url 'dashboard' %}";
+    });
+  </script>
+</body>
+</html>

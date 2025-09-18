@@ -1,0 +1,87 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+<title>Dashboard — Intern ढूंढो</title>
+<meta name="description" content="Your personal internship dashboard." />
+<link rel="icon" href="{% static 'images/Ashoka-Stambha.jpeg' %}" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<nav class="nav">
+  <div class="container nav__inner">
+    <div class="nav__brand" id="nav-home" style="cursor:pointer;">
+      <div class="brand__logo">
+        <img src="{% static 'images/Ashoka-Stambha.jpeg' %}" alt="Ashoka Stambh">
+      </div>
+      <span class="brand__text">Intern ढूंढो</span>
+    </div>
+    <div class="nav__links">
+      <span class="muted" style="margin-right:15px;">
+        Welcome, <strong>{{ request.user.username }}</strong>
+      </span>
+      <button class="btn btn--ghost">My Profile</button>
+      <form method="post" action="{% url 'logout' %}" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn btn--outline">Log Out</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <h1 class="hero__title" style="font-size: 40px; margin-bottom: 24px;">Dashboard</h1>
+      <div class="dashboard-grid">
+        <a href="{% url 'application' %}" class="card card--linkable fade-up">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" class="lucide"><path d="M22 17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10z"></path><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+          </div>
+          <div class="card__title" style="font-size: 24px;">Apply Now</div>
+          <div class="card__desc">Fill out your profile to get AI-matched with top internships.</div>
+          <div class="card__cta">
+            Start Application
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+
+        <div class="card fade-up" style="animation-delay:.1s">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" class="lucide"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg>
+          </div>
+          <div class="card__title">Internships Allocated</div>
+          <div class="card__desc" style="font-size: 36px; font-weight: 700; color: var(--primary); margin-bottom: 16px;">0</div>
+          <div class="allocated-list">
+            <p class="muted" style="text-align: center; padding: 10px 0;">No internships allocated yet. Apply now to get matched!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__bar">
+      <p>© <span id="copyright-year">2025</span> Intern ढूंढो. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("copyright-year").textContent = new Date().getFullYear();
+  document.getElementById("nav-home").addEventListener("click", () => {
+    window.location.href = "{% url 'dashboard' %}";
+  });
+</script>
+
+</body>
+</html>

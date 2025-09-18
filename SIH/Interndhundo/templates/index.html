@@ -1,0 +1,400 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/>
+<title>Intern ढूंढो — AI Internship Matching</title>
+<meta name="description" content="AI-powered internship matching platform." />
+<link rel="icon" href="Images/Ashoka-Stambha.jpeg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<nav class="nav">
+<div class="container nav__inner">
+<div class="nav__brand" id="nav-home">
+<div class="brand__logo">
+    <img src="{% static 'images/Ashoka-Stambha.jpeg' %}" alt="Ashoka Stambh">
+</div>
+<span class="brand__text">Intern ढूंढो</span>
+</div>
+<div class="nav__links">
+<button class="btn btn--ghost">Home</button>
+<button class="btn btn--ghost">About Us</button>
+<button class="btn btn--ghost">Products/Services</button>
+<button class="btn btn--ghost">Contact</button>
+</div>
+<button id="ctaTop" class="btn btn--primary">Get Started</button>
+</div>
+</nav>
+<section class="hero">
+<div class="container hero__grid">
+<div class="hero__copy">
+<h1 class="hero__title">
+Discover Your Future<br />
+<span class="grad">Internship with AI</span>
+</h1>
+<p class="hero__subtitle">
+Personalized Recommendations, Effortless Matching
+</p>
+<button id="ctaHero" class="btn btn--primary btn--lg">
+Get Started
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+d="M9 5l7 7-7 7"/>
+</svg>
+</button>
+</div>
+<div class="hero__art">
+<div class="art__panel">
+<div class="art__grid">
+<div class="art__col">
+<div class="tile">
+<div class="tile__head">
+<div class="tile__icon tile__icon--orange">
+<svg viewBox="0 0 24 24" class="lucide">
+<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+<circle cx="9" cy="7" r="4"/>
+<path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+<path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+</svg>
+</div>
+<span class="tile__title">Students</span>
+</div>
+<p class="tile__desc">Find perfect internships</p>
+</div>
+<div class="tile">
+<div class="tile__head">
+<div class="tile__icon tile__icon--green">
+<svg viewBox="0 0 24 24" class="lucide">
+<path d="M3 21V8a2 2 0 0 1 2-2h3"/>
+<path d="M16 6h3a2 2 0 0 1 2 2v13"/>
+<path d="M3 10h18"/>
+<path d="M7 6v4"/>
+<rect x="7" y="2" width="10" height="4" rx="1"/>
+</svg>
+</div>
+<span class="tile__title">Companies</span>
+</div>
+<p class="tile__desc">Hire top talent</p>
+</div>
+</div>
+<div class="art__col">
+<div class="tile">
+<div class="tile__head">
+<div class="tile__icon tile__icon--blue">
+<svg viewBox="0 0 24 24" class="lucide">
+<path d="M20 7h-9"/>
+<path d="M14 17H5"/>
+<circle cx="17" cy="17" r="3"/>
+<circle cx="7" cy="7" r="3"/>
+</svg>
+</div>
+<span class="tile__title">AI Matching</span>
+</div>
+<p class="tile__desc">Smart recommendations</p>
+</div>
+<div class="tile">
+<div class="tile__head">
+<div class="tile__icon tile__icon--purple">
+<svg viewBox="0 0 24 24" class="lucide">
+<path d="M12 3v18"/>
+<path d="M19.5 12H12"/>
+<path d="M7 12h5"/>
+<path d="M19.5 12a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/>
+</svg>
+</div>
+<span class="tile__title">Perfect Match</span>
+</div>
+<p class="tile__desc">95% success rate</p>
+</div>
+</div>
+</div>
+<div class="art__stars">
+<span class="star">★</span><span class="star">★</span><span class="star">★</span>
+</div>
+<div class="art__badge">
+<svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+d="M3 3v18h18"/>
+</svg>
+<span>98% Match Accuracy</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section section--white">
+<div class="container">
+<div class="section__header">
+<h2 class="section__title">How It Works</h2>
+<p class="section__subtitle">Simple steps to find your perfect internship</p>
+</div>
+<div class="cards cards--three">
+<div class="card fade-up">
+<div class="card__badge">01</div>
+<div class="card__icon">
+<svg viewBox="0 0 24 24" class="lucide">
+<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+<circle cx="9" cy="7" r="4"/>
+</svg>
+</div>
+<div class="card__title">Create Profile</div>
+<div class="card__desc">Tell us about your skills, interests, and career goals</div>
+</div>
+<div class="card fade-up" style="animation-delay:.1s">
+<div class="card__badge">02</div>
+<div class="card__icon">
+<svg viewBox="0 0 24 24" class="lucide">
+<circle cx="12" cy="12" r="10"/>
+<path d="M12 6v6l4 2"/>
+</svg>
+</div>
+<div class="card__title">AI Analysis</div>
+<div class="card__desc">We analyze your profile and match relevant opportunities</div>
+</div>
+<div class="card fade-up" style="animation-delay:.2s">
+<div class="card__badge">03</div>
+<div class="card__icon">
+<svg viewBox="0 0 24 24" class="lucide">
+<path d="m5 12 5 5L20 7"/>
+</svg>
+</div>
+<div class="card__title">Get Matched</div>
+<div class="card__desc">Personalized recommendations with match scores</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section section--muted">
+<div class="container features">
+<div class="feature">
+<h3 class="feature__title">For Students</h3>
+<ul class="feature__list">
+<li>AI-powered internship matching</li>
+<li>Personalized recommendations</li>
+<li>Real-time application tracking</li>
+<li>Skill-based filtering</li>
+<li>Company insights and reviews</li>
+</ul>
+<button id="ctaStudents" class="btn btn--primary btn--lg">
+Start Your Journey
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+d="M9 5l7 7-7 7"/>
+</svg>
+</button>
+</div>
+<div class="feature">
+<h3 class="feature__title">For Companies</h3>
+<ul class="feature__list feature__list--blue">
+<li>Access to top talent pool</li>
+<li>Smart candidate screening</li>
+<li>Reduced hiring time</li>
+<li>Skills-based matching</li>
+<li>Analytics and insights</li>
+</ul>
+<button id="ctaCompanies" class="btn btn--outline btn--lg">
+Post Internships
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+d="M9 5l7 7-7 7"/>
+</svg>
+</button>
+</div>
+</div>
+</section>
+<section class="section section--white">
+<div class="container">
+<div class="section__header">
+<h2 class="section__title">Featured Internships</h2>
+<p class="section__subtitle">Discover amazing opportunities from top companies</p>
+</div>
+<div class="cards cards--three">
+<div class="job">
+<div class="job__header">
+<div>
+<div class="job__title">Product Management Intern</div>
+<div class="job__company">
+<svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<path d="M3 21V8a2 2 0 0 1 2-2h3"/>
+<path d="M16 6h3a2 2 0 0 1 2 2v13"/>
+<path d="M3 10h18"/>
+<path d="M7 6v4"/>
+</svg>
+TechCorp
+</div>
+</div>
+<span class="pill pill--green">95% Match</span>
+</div>
+<div class="job__meta">
+<div class="meta__row">
+<svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0Z"/>
+<circle cx="12" cy="10" r="3"/>
+</svg>
+San Francisco, CA
+</div>
+<div class="meta__row">
+<svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<circle cx="12" cy="12" r="10"/>
+<path d="M12 6v6l4 2"/>
+</svg>
+3 months
+</div>
+<div class="job__tags">
+<span class="tag">Product Strategy</span>
+<span class="tag">Analytics</span>
+<span class="tag">User Research</span>
+</div>
+<button class="btn btn--primary btn--block job__apply">Apply Now</button>
+</div>
+</div>
+<div class="job">
+<div class="job__header">
+<div>
+<div class="job__title">PM Intern - Mobile Apps</div>
+<div class="job__company">
+<svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<path d="M3 21V8a2 2 0 0 1 2-2h3"/>
+<path d="M16 6h3a2 2 0 0 1 2 2v13"/>
+<path d="M3 10h18"/>
+<path d="M7 6v4"/>
+</svg>
+StartupXYZ
+</div>
+</div>
+<span class="pill pill--green">88% Match</span>
+</div>
+<div class="job__meta">
+<div class="meta__row">
+<svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0Z"/>
+<circle cx="12" cy="10" r="3"/>
+</svg>
+Remote
+</div>
+<div class="meta__row">
+<svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<circle cx="12" cy="12" r="10"/>
+<path d="M12 6v6l4 2"/>
+</svg>
+6 months
+</div>
+<div class="job__tags">
+<span class="tag">Mobile Product</span>
+<span class="tag">Agile</span>
+<span class="tag">Data Analysis</span>
+</div>
+<button class="btn btn--primary btn--block job__apply">Apply Now</button>
+</div>
+</div>
+<div class="job">
+<div class="job__header">
+<div>
+<div class="job__title">Associate PM Intern</div>
+<div class="job__company">
+<svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<path d="M3 21V8a2 2 0 0 1 2-2h3"/>
+<path d="M16 6h3a2 2 0 0 1 2 2v13"/>
+<path d="M3 10h18"/>
+<path d="M7 6v4"/>
+</svg>
+BigTech Inc
+</div>
+</div>
+<span class="pill pill--green">92% Match</span>
+</div>
+<div class="job__meta">
+<div class="meta__row">
+<svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0Z"/>
+<circle cx="12" cy="10" r="3"/>
+</svg>
+Seattle, WA
+</div>
+<div class="meta__row">
+<svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<circle cx="12" cy="12" r="10"/>
+<path d="M12 6v6l4 2"/>
+</svg>
+4 months
+</div>
+<div class="job__tags">
+<span class="tag">Product Design</span>
+<span class="tag">Market Research</span>
+<span class="tag">SQL</span>
+</div>
+<button class="btn btn--primary btn--block job__apply">Apply Now</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="cta">
+<div class="container cta__inner">
+<h2 class="cta__title">Ready to Find Your Perfect Internship?</h2>
+<p class="cta__subtitle">Join thousands of students who have found their dream internships with AI</p>
+<button id="ctaBottom" class="btn btn--secondary btn--lg">
+Get Started Today
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+d="M9 5l7 7-7 7"/>
+</svg>
+</button>
+</div>
+</section>
+<footer class="footer">
+<div class="container footer__grid">
+<div>
+<div class="nav__brand">
+<div class="brand__logo">
+<img
+src="./Images/Ashoka-Stambha.jpeg" class="brand__img" alt="Ashoka Stambh" />
+</div>
+<span class="brand__text">Intern ढूंढो</span>
+</div>
+<p class="muted">AI-powered internship matching platform for the next generation of professionals.</p>
+</div>
+<div>
+<h4 class="footer__title">Platform</h4>
+<ul class="footer__list">
+<li>Browse Internships</li>
+<li>AI Recommendations</li>
+<li>Application Tracking</li>
+<li>Company Profiles</li>
+</ul>
+</div>
+<div>
+<h4 class="footer__title">Support</h4>
+<ul class="footer__list">
+<li>Help Center</li>
+<li>Contact Us</li>
+<li>Privacy Policy</li>
+<li>Terms of Service</li>
+</ul>
+</div>
+<div>
+<h4 class="footer__title">Connect</h4>
+<ul class="footer__list">
+<li>LinkedIn</li>
+<li>Twitter</li>
+<li>Instagram</li>
+<li>Facebook</li>
+</ul>
+</div>
+</div>
+<div class="footer__bar">
+<p>© 2025 Intern ढूंढो. All rights reserved.</p>
+</div>
+</footer>
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
+```
