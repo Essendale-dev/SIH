@@ -1,2 +1,2 @@
 # SIH
-entire ap using django, lacking the database
+Entire app 'Interndhundo' using django, lacking the database.
